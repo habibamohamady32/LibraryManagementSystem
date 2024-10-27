@@ -20,11 +20,11 @@ public class Book {
     private Long id;
     private String title;
     @ManyToOne
-    @JoinColumn(name = "author")
+    @JoinColumn(name = "author", nullable = false)
     private Author author;
 
     @ManyToOne
-    @JoinColumn(name = "category")
+    @JoinColumn(name = "category", nullable = false)
     private Category category;
 
 }

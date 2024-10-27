@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 @Service
 public class AuthorServiceImpl implements AuthorService {
     private final AuthorRepository authorRepository;
+
     public AuthorServiceImpl(AuthorRepository authorRepository) {
         this.authorRepository = authorRepository;
     }
@@ -23,24 +24,39 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public Optional<AuthorDTO> getAuthorById(Long id) {
-        return authorRepository.findById(id).map(AuthorMapper::authorToAuthorDTO);
+    public AuthorDTO getAuthorById(Long id) {
+        return authorRepository.findById(id)
+                .map(AuthorMapper::authorToDTO)
+                .orElseThrow();
     }
 
     @Override
     public List<AuthorDTO> getAllAuthors() {
-        return authorRepository.findAll().stream().map(AuthorMapper::authorToAuthorDTO).collect(Collectors.toList());
+        return authorRepository.findAll().stream()
+                .map(AuthorMapper::authorToDTO)
+                .collect(Collectors.toList());
     }
 
     @Override
     public Author updateAuthor(Long id, Author author) {
-        Author updatedAuthor = authorRepository.findById(id).get();
-        updatedAuthor.setName(author.getName());
-        return authorRepository.save(updatedAuthor);
+        Author existingAuthor = authorRepository.findById(id)
+                .orElseThrow();
+
+        existingAuthor.setName(author.getName());
+        return authorRepository.save(existingAuthor);
     }
 
     @Override
     public void deleteAuthor(Long id) {
+
         authorRepository.deleteById(id);
     }
+
+    @Override
+    public Author findById(Long id) {
+        return authorRepository.findById(id)
+                .orElseThrow();
+    }
+
+
 }

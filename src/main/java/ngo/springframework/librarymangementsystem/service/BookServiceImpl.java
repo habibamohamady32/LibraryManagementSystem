@@ -19,42 +19,41 @@ public class BookServiceImpl implements BookService {
         this.bookRepository = bookRepository;
     }
 
-
+    @Override
     public List<BookDTO> searchBooksByAuthor(String authorName) {
         return bookRepository.findByAuthor_Name(authorName)
                 .stream()
-                .map(BookMapper::toBookDTO)
+                .map(BookMapper::toDTO) // Corrected to use toDTO
                 .collect(Collectors.toList());
     }
 
+    @Override
     public List<BookDTO> searchBooksByCategory(String categoryName) {
         return bookRepository.findByCategory_Name(categoryName)
                 .stream()
-                .map(BookMapper::toBookDTO)
+                .map(BookMapper::toDTO) // Corrected to use toDTO
                 .collect(Collectors.toList());
     }
 
+    @Override
     public List<BookDTO> searchBooksByAuthorAndCategory(String authorName, String categoryName) {
         return bookRepository.findByAuthor_NameAndCategory_Name(authorName, categoryName)
                 .stream()
-                .map(BookMapper::toBookDTO)
+                .map(BookMapper::toDTO) // Corrected to use toDTO
                 .collect(Collectors.toList());
     }
-
-
 
     @Override
     public List<BookDTO> getAllBooks() {
         return bookRepository.findAll()
                 .stream()
-                .map(BookMapper::toBookDTO)
+                .map(BookMapper::toDTO) // Corrected to use toDTO
                 .collect(Collectors.toList());
     }
 
     @Override
     public Optional<BookDTO> getBookById(Long id) {
-        return bookRepository.findById(id).map(BookMapper::toBookDTO);
-
+        return bookRepository.findById(id).map(BookMapper::toDTO);
     }
 
     @Override
@@ -64,15 +63,18 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book updateBook(Long id, Book book) {
-        Book updatedBook = bookRepository.findById(id).get();
-        updatedBook.setTitle(book.getTitle());
-        updatedBook.setAuthor(book.getAuthor());
-        updatedBook.setCategory(book.getCategory());
-        return bookRepository.save(updatedBook);
+        Book existingBook = bookRepository.findById(id)
+                .orElseThrow();
+
+        existingBook.setTitle(book.getTitle());
+        existingBook.setAuthor(book.getAuthor());
+        existingBook.setCategory(book.getCategory());
+        return bookRepository.save(existingBook);
     }
 
     @Override
     public void deleteBook(Long id) {
+
         bookRepository.deleteById(id);
     }
 }

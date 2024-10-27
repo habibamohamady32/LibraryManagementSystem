@@ -2,24 +2,22 @@ package ngo.springframework.librarymangementsystem.controller;
 
 import lombok.RequiredArgsConstructor;
 import ngo.springframework.librarymangementsystem.DTOs.BookDTO;
+import ngo.springframework.librarymangementsystem.Mapper.BookMapper;
 import ngo.springframework.librarymangementsystem.model.Book;
 import ngo.springframework.librarymangementsystem.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/books")
+@RequiredArgsConstructor
 public class BookController {
     private final BookService bookService;
-
-    @Autowired
-    public BookController(BookService bookService) {
-        this.bookService = bookService;
-    }
 
     @GetMapping("/search/author")
     public List<BookDTO> searchBooksByAuthor(@RequestParam String authorName) {
@@ -37,33 +35,39 @@ public class BookController {
         return bookService.searchBooksByAuthorAndCategory(authorName, categoryName);
     }
 
-
     @GetMapping
     public List<BookDTO> getAllBooks() {
         return bookService.getAllBooks();
     }
 
     @GetMapping("/{id}")
-    public Optional<BookDTO> getBookById(@PathVariable Long id) {
-        return bookService.getBookById(id);
+    public ResponseEntity<BookDTO> getBook(@PathVariable Long id) {
+        return bookService.getBookById(id)
+                .map(ResponseEntity::ok)
+                .orElseThrow();
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
-    public Book createBook(@RequestBody Book book) {
-        return bookService.createBook(book);
+    public ResponseEntity<BookDTO> createBook(@RequestBody BookDTO bookDTO) {
+        Book book = BookMapper.toEntity(bookDTO);
+        Book savedBook = bookService.createBook(book);
+        BookDTO savedBookDTO = BookMapper.toDTO(savedBook);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedBookDTO);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
-    public Book updateBook(@PathVariable Long id, @RequestBody Book book) {
-        return bookService.updateBook(id, book);
+    public ResponseEntity<BookDTO> updateBook(@PathVariable Long id, @RequestBody BookDTO bookDTO) {
+        Book book = BookMapper.toEntity(bookDTO);
+        Book updatedBook = bookService.updateBook(id, book);
+        return ResponseEntity.ok(BookMapper.toDTO(updatedBook));
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
-    public void deleteBook(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
         bookService.deleteBook(id);
+        return ResponseEntity.noContent().build();
     }
-
 }

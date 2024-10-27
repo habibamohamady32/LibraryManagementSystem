@@ -11,18 +11,12 @@ import java.util.stream.Collectors;
 
 public interface BookService {
 
-    public List<BookDTO> searchBooksByAuthor(String authorName);
-
-    public List<BookDTO> searchBooksByCategory(@RequestParam String categoryName);
-    public List<BookDTO> searchBooksByAuthorAndCategory(@RequestParam String authorName,
-                                                        @RequestParam String categoryName);
+    List<BookDTO> searchBooksByAuthor(String authorName);
+    List<BookDTO> searchBooksByCategory(String categoryName);
+    List<BookDTO> searchBooksByAuthorAndCategory(String authorName, String categoryName);
     List<BookDTO> getAllBooks();
-
     Optional<BookDTO> getBookById(Long id);
-
     Book createBook(Book book);
-
     Book updateBook(Long id, Book book);
-
     void deleteBook(Long id);
 }

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface CategoryService {
     Category createCategory(Category category);
-    Optional<CategoryDTO> getCategoryById(Long id);
+    Optional<CategoryDTO> getCategoryById(Long id); // Ensure the naming is consistent
     List<CategoryDTO> getAllCategories();
     Category updateCategory(Long id, Category category);
     void deleteCategory(Long id);
