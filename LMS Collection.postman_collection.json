@@ -1,0 +1,1362 @@
+{
+	"info": {
+		"_postman_id": "c991c110-7764-4118-9fa5-f6867f92985c",
+		"name": "LMS Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39175042"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/books",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjMxODIsImV4cCI6MTczMDA2NDYyMn0.vIvxIypi5TUC9D2vfnWZFQSk2cvC98UkiancuWCxIyU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"New Book\",\r\n    \"author\":{\r\n        \"id\":1\r\n    },\r\n    \"category\":{\r\n        \"id\":1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/books",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjMxODIsImV4cCI6MTczMDA2NDYyMn0.vIvxIypi5TUC9D2vfnWZFQSk2cvC98UkiancuWCxIyU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Another Book\",\r\n    \"author\":{\r\n        \"id\":1\r\n    },\r\n    \"category\":{\r\n        \"id\":1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/books",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjM3NzUsImV4cCI6MTczMDA2NTIxNX0.SnTBib8ajtSQj8bDFKkySbQE00y0opSn-atANNH-SpI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Created by user\",\r\n    \"author\":{\r\n        \"id\":1\r\n    },\r\n    \"category\":{\r\n        \"id\":1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"books"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/books/1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjMxODIsImV4cCI6MTczMDA2NDYyMn0.vIvxIypi5TUC9D2vfnWZFQSk2cvC98UkiancuWCxIyU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"updated by admin\",\r\n    \"author\":{\r\n        \"id\":1\r\n    },\r\n    \"category\":{\r\n        \"id\":1\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/books/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/books/1",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"updated by user\",\r\n    \"author\":{\r\n        \"id\":1\r\n    },\r\n    \"category\":{\r\n        \"id\":1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/books/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/books/2",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjMxODIsImV4cCI6MTczMDA2NDYyMn0.vIvxIypi5TUC9D2vfnWZFQSk2cvC98UkiancuWCxIyU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/books/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"books",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/books/1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjM3NzUsImV4cCI6MTczMDA2NTIxNX0.SnTBib8ajtSQj8bDFKkySbQE00y0opSn-atANNH-SpI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/books/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Retrieve",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/books",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjMxODIsImV4cCI6MTczMDA2NDYyMn0.vIvxIypi5TUC9D2vfnWZFQSk2cvC98UkiancuWCxIyU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/books/1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjMxODIsImV4cCI6MTczMDA2NDYyMn0.vIvxIypi5TUC9D2vfnWZFQSk2cvC98UkiancuWCxIyU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/books/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/books",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjM3NzUsImV4cCI6MTczMDA2NTIxNX0.SnTBib8ajtSQj8bDFKkySbQE00y0opSn-atANNH-SpI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/books/1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjM3NzUsImV4cCI6MTczMDA2NTIxNX0.SnTBib8ajtSQj8bDFKkySbQE00y0opSn-atANNH-SpI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/books/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create Category",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjA2NzksImV4cCI6MTczMDA2MjExOX0.PG1gFAiuVDJ-WjgMjC23wmUn5Ij9q9ziKYKK9Pe8vzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Another Category\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/categories Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjA2NzksImV4cCI6MTczMDA2MjExOX0.PG1gFAiuVDJ-WjgMjC23wmUn5Ij9q9ziKYKK9Pe8vzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Another Category\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjE0MzgsImV4cCI6MTczMDA2Mjg3OH0.8p4adGh9vFsqlzj2eHv5gRdgVh568Axht3dpTusgeSI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Category By User\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Categories",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjA2NzksImV4cCI6MTczMDA2MjExOX0.PG1gFAiuVDJ-WjgMjC23wmUn5Ij9q9ziKYKK9Pe8vzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjE0MzgsImV4cCI6MTczMDA2Mjg3OH0.8p4adGh9vFsqlzj2eHv5gRdgVh568Axht3dpTusgeSI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Category by ID",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/categories/2",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjA2NzksImV4cCI6MTczMDA2MjExOX0.PG1gFAiuVDJ-WjgMjC23wmUn5Ij9q9ziKYKK9Pe8vzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/categories/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"categories",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/categories/1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjE0MzgsImV4cCI6MTczMDA2Mjg3OH0.8p4adGh9vFsqlzj2eHv5gRdgVh568Axht3dpTusgeSI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/categories/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update Category",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/categories/1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjA2NzksImV4cCI6MTczMDA2MjExOX0.PG1gFAiuVDJ-WjgMjC23wmUn5Ij9q9ziKYKK9Pe8vzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Updated Category\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/categories/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/categories/1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjE0MzgsImV4cCI6MTczMDA2Mjg3OH0.8p4adGh9vFsqlzj2eHv5gRdgVh568Axht3dpTusgeSI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"user try to update\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/categories/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Category",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/categories/2",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjA2NzksImV4cCI6MTczMDA2MjExOX0.PG1gFAiuVDJ-WjgMjC23wmUn5Ij9q9ziKYKK9Pe8vzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/categories/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"categories",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/categories/1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjE0MzgsImV4cCI6MTczMDA2Mjg3OH0.8p4adGh9vFsqlzj2eHv5gRdgVh568Axht3dpTusgeSI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/categories/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "Create Author",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/authors",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjI0NTksImV4cCI6MTczMDA2Mzg5OX0.2rFaSqkMewac6GuElSI-72duCnZTlQb1fH6HxfmSRUE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"New Author\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/authors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"authors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/authors",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjI0NTksImV4cCI6MTczMDA2Mzg5OX0.2rFaSqkMewac6GuElSI-72duCnZTlQb1fH6HxfmSRUE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Another Author\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/authors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"authors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/authors",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjI3OTQsImV4cCI6MTczMDA2NDIzNH0.mTtrxsJcRgxmZwpy6irCpQWuPqtizihrQl8RHCCuuLs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"author by user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/authors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"authors"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Authors",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/authors",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjI0NTksImV4cCI6MTczMDA2Mzg5OX0.2rFaSqkMewac6GuElSI-72duCnZTlQb1fH6HxfmSRUE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/authors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"authors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/authors",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjI3OTQsImV4cCI6MTczMDA2NDIzNH0.mTtrxsJcRgxmZwpy6irCpQWuPqtizihrQl8RHCCuuLs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/authors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"authors"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Author by ID",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/authors/2",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjI0NTksImV4cCI6MTczMDA2Mzg5OX0.2rFaSqkMewac6GuElSI-72duCnZTlQb1fH6HxfmSRUE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/authors/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"authors",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/authors/1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjI3OTQsImV4cCI6MTczMDA2NDIzNH0.mTtrxsJcRgxmZwpy6irCpQWuPqtizihrQl8RHCCuuLs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/authors/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"authors",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update Author",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/authors/2",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjI0NTksImV4cCI6MTczMDA2Mzg5OX0.2rFaSqkMewac6GuElSI-72duCnZTlQb1fH6HxfmSRUE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"updated author\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/authors/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"authors",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/authors/1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjI3OTQsImV4cCI6MTczMDA2NDIzNH0.mTtrxsJcRgxmZwpy6irCpQWuPqtizihrQl8RHCCuuLs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Edited by user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/authors/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"authors",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Author",
+					"item": [
+						{
+							"name": "http://localhost:8085/api/authors/2",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNdWhhbW1lZEBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjI0NTksImV4cCI6MTczMDA2Mzg5OX0.2rFaSqkMewac6GuElSI-72duCnZTlQb1fH6HxfmSRUE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/authors/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"authors",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8085/api/authors/1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJpYUBnbWFpbC5jb20iLCJpYXQiOjE3MzAwNjI3OTQsImV4cCI6MTczMDA2NDIzNH0.mTtrxsJcRgxmZwpy6irCpQWuPqtizihrQl8RHCCuuLs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/authors/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"authors",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"item": [
+				{
+					"name": "http://localhost:8085/api/v1/auth/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\":\"Muhammed\",\r\n    \"lastname\":\"Malik\",\r\n    \"email\":\"Muhammed@gmail.com\",\r\n    \"password\":\"12345\",\r\n    \"role\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8085/api/v1/auth/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\":\"Maria\",\r\n    \"lastname\":\"Tarik\",\r\n    \"email\":\"Maria@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"role\":\"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authenticate",
+			"item": [
+				{
+					"name": "http://localhost:8085/api/v1/auth/authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Muhammed@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/auth/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8085/api/v1/auth/authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Maria@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/auth/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
