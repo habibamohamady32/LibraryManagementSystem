@@ -5,6 +5,7 @@ import ngo.springframework.librarymangementsystem.DTOs.BookDTO;
 import ngo.springframework.librarymangementsystem.model.Book;
 import ngo.springframework.librarymangementsystem.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -47,16 +48,19 @@ public class BookController {
         return bookService.getBookById(id);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public Book createBook(@RequestBody Book book) {
         return bookService.createBook(book);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public Book updateBook(@PathVariable Long id, @RequestBody Book book) {
         return bookService.updateBook(id, book);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public void deleteBook(@PathVariable Long id) {
         bookService.deleteBook(id);
